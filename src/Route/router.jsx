@@ -1,0 +1,34 @@
+import { createBrowserRouter } from "react-router";
+import HomeLayout from "../layout/HomeLayout";
+import Home from "../Page/Home";
+import AuthLayout from "../Page/AuthLayout";
+import Register from "../Page/Register";
+import Login from "../Page/Login";
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomeLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        loader: () => fetch("/data.json"),
+      },
+      {
+        path: "/auth",
+        element: <AuthLayout />,
+        children: [
+          {
+            path: "/auth/register",
+            element: <Register/>
+          },
+          {
+            path: "/auth/login",
+            element: <Login/>
+          },
+        ],
+      },
+    ],
+  },
+]);
