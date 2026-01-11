@@ -2,3 +2,8 @@
 @plugin "daisyui" {
     themes: light --default;
 }
+
+a.active{
+   @apply text-purple-700 border-b-2
+ 
+}

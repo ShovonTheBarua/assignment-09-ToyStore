@@ -8,6 +8,7 @@ import ToyDetails from "../Page/ToyDetailsPage";
 import ToyDetailsPage from "../Page/ToyDetailsPage";
 import PrivateRoute from "../Provider/PrivateRoute";
 import Error from "../Page/Error";
+import MyProfile from "../Page/MyProfile";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: () => fetch("/data.json"),
+      },
+      {
+        path: "/myprofile",
+        element: <MyProfile></MyProfile>,
       },
       {
         path: "/auth",
@@ -46,6 +51,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <Error></Error>
+    element: <Error></Error>,
   },
 ]);

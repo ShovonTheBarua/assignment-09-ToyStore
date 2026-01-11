@@ -14,7 +14,7 @@ const ToyCard = ({ data }) => {
     sellerName,
     description,
     availableQuantity,
-  } = data;
+  } = data; 
   console.log(data);
   return (
     <div className="card bg-base-100 w-96 shadow-sm mx-auto border border-gray-300 ">

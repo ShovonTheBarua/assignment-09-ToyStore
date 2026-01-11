@@ -1,10 +1,13 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const Register = () => {
-  const { createUser, setUser } = use(AuthContext);
+  const { createUser } = use(AuthContext);
+  const [show, setShow] = useState(false);
+  
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -67,13 +70,22 @@ const Register = () => {
                 placeholder="Email"
               />
               {/* password */}
-              <label className="label">Password</label>
-              <input
-                name="password"
-                type="password"
-                className="input"
-                placeholder="Password"
-              />
+              <div className=" relative cursor-pointer">
+                <label className="label">Password</label>
+                <input
+                  name="password"
+                  type={`${show ? "text" : "password"}`}
+                  className="input"
+                  placeholder="Password"
+                />
+                <p  onClick={()=> setShow(!show)}>
+                  {show ? (
+                  <FiEye className="absolute right-[30px] top-[35px]" />
+                ) : (
+                  <FiEyeOff className="absolute right-[30px] top-[35px]" />
+                )}
+                </p>
+              </div>
 
               <div>
                 <a className="link link-hover">Forgot password?</a>
