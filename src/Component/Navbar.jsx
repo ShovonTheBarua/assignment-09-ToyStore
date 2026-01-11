@@ -25,8 +25,8 @@ const Navbar = () => {
           <NavLink to="/myprofile">My profile</NavLink>
           {user && <NavLink to="/seller">Seller</NavLink>}
         </div>
-        <div>
-          {user ? <img src={user.photoURL} alt="" /> : ""}
+        <div className="flex items-center gap-4">
+          {user ? <img className="w-[40px] rounded-full" src={user.photoURL} alt="" /> : ""}
           {user ? (
             <Link to="/" onClick={handleLogOut} className="btn">
               Log Out

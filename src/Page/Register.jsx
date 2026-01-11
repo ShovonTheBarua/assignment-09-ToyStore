@@ -6,7 +6,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-  const { createUser } = use(AuthContext);
+  const { createUser, updateUser, setUser } = use(AuthContext);
   const [show, setShow] = useState(false);
 
   const handleRegister = (e) => {
@@ -27,8 +27,15 @@ const Register = () => {
 
     createUser(email, password)
       .then((res) => {
-        console.log(res.user);
-        // setUser(res.user)
+        const user = res.user;
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
