@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInUser, setUser } = use(AuthContext);
@@ -22,6 +23,10 @@ const Login = () => {
 
   return (
     <div className=" ">
+      <Helmet>
+              <title>Login</title>
+              <meta name="description" content="Best toys for kids" />
+            </Helmet>
       <div className="min-h-screen flex flex-col justify-center items-center w-full gap-3">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Login now!</h1>

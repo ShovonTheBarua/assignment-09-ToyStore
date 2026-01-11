@@ -3,11 +3,12 @@ import { Link } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser } = use(AuthContext);
   const [show, setShow] = useState(false);
-  
+
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -38,6 +39,10 @@ const Register = () => {
 
   return (
     <div className=" ">
+      <Helmet>
+        <title>Register Page</title>
+        <meta name="description" content="Best toys for kids" />
+      </Helmet>
       <div className="min-h-screen flex flex-col justify-center items-center w-full gap-3">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Register</h1>
@@ -78,12 +83,12 @@ const Register = () => {
                   className="input"
                   placeholder="Password"
                 />
-                <p  onClick={()=> setShow(!show)}>
+                <p onClick={() => setShow(!show)}>
                   {show ? (
-                  <FiEye className="absolute right-[30px] top-[35px]" />
-                ) : (
-                  <FiEyeOff className="absolute right-[30px] top-[35px]" />
-                )}
+                    <FiEye className="absolute right-[30px] top-[35px]" />
+                  ) : (
+                    <FiEyeOff className="absolute right-[30px] top-[35px]" />
+                  )}
                 </p>
               </div>
 
