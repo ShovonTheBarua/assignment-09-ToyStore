@@ -20,9 +20,10 @@ const Navbar = () => {
     <div>
       <div className="flex flex-col md:flex-row border justify-between   items-center w-11/12 mx-auto py-3">
         <h1 className="text-2xl font-bold">ToyTopia</h1>
-        <div className="flex gap-3">
+        <div className="flex gap-5">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/myprofile">My profile</NavLink>
+          {user && <NavLink to="/seller">Seller</NavLink>}
         </div>
         <div>
           {user ? <img src={user.photoURL} alt="" /> : ""}

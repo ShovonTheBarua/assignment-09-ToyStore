@@ -2,7 +2,7 @@
 [{
     "toyId": 1,
     "toyName": "Lego Classic Bricks",
-    "sellerName": "Toys R Us Local",
+    "sellerName": "Kris Gail",
     "sellerEmail": "contact@toysruslocal.com",
     "price": 49.99,
     "rating": 4.7,
@@ -14,7 +14,7 @@
 {
   "toyId": 2,
   "toyName": "Wooden Train Set",
-  "sellerName": "Happy Kids Toys",
+  "sellerName": "Josh batler",
   "sellerEmail": "hello@happykidstoys.com",
   "price": 34.50,
   "rating": 4.5,
@@ -26,7 +26,7 @@
 {
   "toyId": 3,
   "toyName": "Remote Control Racing Car",
-  "sellerName": "Speedy Toys Shop",
+  "sellerName": "Lasit Mallinga",
   "sellerEmail": "sales@speedytoys.com",
   "price": 29.99,
   "rating": 4.6,
