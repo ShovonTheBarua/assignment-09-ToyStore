@@ -4,6 +4,7 @@ import ToyCard from "../Component/ToyCard";
 import ToyDetailsCard from "../Component/ToyDetailsCard";
 import { IoIosStar } from "react-icons/io";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const ToyDetailsPage = () => {
   const { id } = useParams();
@@ -22,8 +23,12 @@ const ToyDetailsPage = () => {
 
   return (
     <div className="w-11/12 mx-auto mt-5 w-fit mx-auto">
+        <Helmet>
+        <title>{toyName}</title>
+        <meta name="description" content="Best toys for kids" />
+      </Helmet>
       <div className="flex gap-15 p-5 justify-center ">
-        <img src={pictureURL} className="h-[300px] rounded-2xl" alt="" />
+        <img src={pictureURL} className="h-[400px] rounded-2xl" alt="" />
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">{toyName}</h1>
           <p className="text-5xl ">${price}</p>
