@@ -1,19 +1,42 @@
-import React from 'react';
-import { NavLink } from 'react-router';
+import React, { use } from "react";
+import { Link, NavLink } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
-    return (
-        <div>
-            <div className='flex flex-col md:flex-row justify-between   items-center w-11/12 mx-auto py-3'>
-            <h1 className='text-2xl font-bold'>ToyTopia</h1>
-            <div className='flex gap-3'>
-                <NavLink>Home</NavLink>
-                <NavLink>My profile</NavLink>
-            </div>
-            <button className='btn'>Login</button>
+  const { user, signOutUser, setUser } = use(AuthContext);
+  console.log(user);
+  const handleLogOut = () => {
+    signOutUser()
+      .then((res) => {
+        console.log(res);
+        toast.success("Logged out successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  return (
+    <div>
+      <div className="flex flex-col md:flex-row border justify-between   items-center w-11/12 mx-auto py-3">
+        <h1 className="text-2xl font-bold">ToyTopia</h1>
+        <div className="flex gap-3">
+          <NavLink>Home</NavLink>
+          <NavLink>My profile</NavLink>
         </div>
-        </div>
-    );
+        {user ? <img src={user.photoURL} alt="" /> : ""}
+        {user ? (
+          <Link to="/" onClick={handleLogOut} className="btn">
+            Log Out
+          </Link>
+        ) : (
+          <Link to="/auth/login" className="btn">
+            Login
+          </Link>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;

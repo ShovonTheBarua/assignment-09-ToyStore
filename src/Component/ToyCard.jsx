@@ -1,5 +1,6 @@
 import React from "react";
 import { IoIosStar } from "react-icons/io";
+import { Link } from "react-router";
 
 const ToyCard = ({ data }) => {
   const {
@@ -36,7 +37,7 @@ const ToyCard = ({ data }) => {
 
         <p className="text-xl">${price}</p>
         <div className="card-actions">
-          <button className="btn btn-neutral">View More</button>
+          <Link to={`/toydetails/${toyId}`} className="btn btn-neutral">View More</Link>
         </div>
       </div>
     </div>
