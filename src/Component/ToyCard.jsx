@@ -8,14 +8,12 @@ const ToyCard = ({ data }) => {
     toyName,
     price,
     rating,
-    subCategory,
+
     toyId,
-    sellerEmail,
-    sellerName,
-    description,
+
     availableQuantity,
-  } = data; 
- 
+  } = data;
+
   return (
     <div className="card bg-base-100 w-96 shadow-sm mx-auto border border-gray-300 ">
       <figure className="px-10 pt-10">
@@ -29,7 +27,7 @@ const ToyCard = ({ data }) => {
         <div className="flex gap-3">
           <h2 className="card-title ">{toyName}</h2>
           <button className="flex items-center font-semibold gap-1 border px-3 border-gray-500 rounded-2xl">
-           {rating} <IoIosStar />
+            {rating} <IoIosStar />
           </button>
         </div>
 
@@ -37,7 +35,9 @@ const ToyCard = ({ data }) => {
 
         <p className="text-xl">${price}</p>
         <div className="card-actions">
-          <Link to={`/toydetails/${toyId}`} className="btn btn-neutral">View More</Link>
+          <Link to={`/toydetails/${toyId}`} className="btn btn-neutral">
+            View More
+          </Link>
         </div>
       </div>
     </div>

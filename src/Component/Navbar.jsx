@@ -4,7 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const { user, signOutUser, setUser } = use(AuthContext);
+  const { user, signOutUser,  } = use(AuthContext);
  
   const handleLogOut = () => {
     signOutUser()

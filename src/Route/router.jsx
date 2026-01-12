@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
         element: <PrivateRoute>
           <Seller />
         </PrivateRoute>,
-        loader: () => fetch("./data.json"),
+        loader: () => fetch("/data.json"),
       },
       {
         path: "/auth",

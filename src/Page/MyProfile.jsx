@@ -9,8 +9,7 @@ const MyProfile = () => {
   if (loading) {
     return <Loading />;
   }
-  const { displayName, email, photoURL } = user;
-  
+
   return (
     <div>
       <Helmet>
@@ -22,9 +21,11 @@ const MyProfile = () => {
         <h1 className="text-3xl font-semibold text-center">Your Profile</h1>
 
         <div className=" text-center mt-3">
-          <h2 className="text-xl text-purple-900">Name: {displayName}</h2>
-          <h2 className="text-xl text-purple-900">Email: {email}</h2>
-          <h2 className="text-xl text-purple-900">photo URL: {photoURL}</h2>
+          <h2 className="text-xl text-purple-900">Name: {user?.displayName}</h2>
+          <h2 className="text-xl text-purple-900">Email: {user?.email}</h2>
+          <h2 className="text-xl text-purple-900">
+            photo URL: {user?.photoURL}
+          </h2>
         </div>
       </div>
     </div>
