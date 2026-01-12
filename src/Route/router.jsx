@@ -46,9 +46,7 @@ export const router = createBrowserRouter([
           },
         ],
       },
-    ],
-  },
-  {
+      {
     path: "/toydetails/:id",
     element: (
       <PrivateRoute>
@@ -57,6 +55,9 @@ export const router = createBrowserRouter([
     ),
     loader: () => fetch("/data.json"),
   },
+    ],
+  },
+  
   {
     path: "/*",
     element: <Error></Error>,

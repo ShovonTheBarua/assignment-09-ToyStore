@@ -1,32 +1,37 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const { signInUser, setUser } = use(AuthContext);
+  const { signInUser, setUser, user } = use(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     signInUser(email, password)
-    .then(res =>{
-      console.log(res.user)
-      setUser(res.user)
-    }).catch(error =>{
-      const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorCode, errorMessage)
-    })
+      .then((res) => {
+        console.log(res.user);
+        setUser(res.user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
   };
+
+  if (user) {
+    return <Navigate to="/"></Navigate>;
+  }
 
   return (
     <div className=" ">
       <Helmet>
-              <title>Login</title>
-              <meta name="description" content="Best toys for kids" />
-            </Helmet>
+        <title>Login</title>
+        <meta name="description" content="Best toys for kids" />
+      </Helmet>
       <div className="min-h-screen flex flex-col justify-center items-center w-full gap-3">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Login now!</h1>
@@ -57,6 +62,7 @@ const Login = () => {
               <button type="submit" className="btn btn-neutral mt-4">
                 Login
               </button>
+
               {/* Google */}
               <button className="btn bg-white text-black border-[#e5e5e5]">
                 <svg

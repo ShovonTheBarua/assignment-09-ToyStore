@@ -27,8 +27,8 @@ const ToyDetailsPage = () => {
         <title>{toyName}</title>
         <meta name="description" content="Best toys for kids" />
       </Helmet>
-      <div className="flex gap-15 p-5 justify-center ">
-        <img src={pictureURL} className="h-[400px] rounded-2xl" alt="" />
+      <div className="flex flex-col md:flex-row gap-15 p-5 justify-center ">
+        <img src={pictureURL} className="h-[400px] object-cover rounded-2xl" alt="" />
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">{toyName}</h1>
           <p className="text-5xl ">${price}</p>
@@ -40,7 +40,7 @@ const ToyDetailsPage = () => {
         </div>
       </div>
       <div className="border-b border-gray-200 my-4 mx-auto"></div>
-      <div>
+      <div className="p-5">
         <h2 className="text-2xl font-semibold">Description</h2>
         <p>{description}</p>
       </div>
