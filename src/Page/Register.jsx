@@ -23,7 +23,7 @@ const Register = () => {
       );
       return;
     }
-    console.log(name, photo, email, password);
+ 
 
     createUser(email, password)
       .then((res) => {
@@ -33,14 +33,14 @@ const Register = () => {
             setUser({ ...user, displayName: name, photoURL: photo });
           })
           .catch((error) => {
-            console.log(error);
+            // console.log(error);
             setUser(user);
           });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        // console.log(errorCode, errorMessage);
       });
   };
 

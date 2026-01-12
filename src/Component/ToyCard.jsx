@@ -15,7 +15,7 @@ const ToyCard = ({ data }) => {
     description,
     availableQuantity,
   } = data; 
-  console.log(data);
+ 
   return (
     <div className="card bg-base-100 w-96 shadow-sm mx-auto border border-gray-300 ">
       <figure className="px-10 pt-10">

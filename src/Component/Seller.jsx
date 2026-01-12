@@ -6,7 +6,7 @@ const Seller = () => {
 
   const newData = data.slice(0, 3);
 
-  console.log(newData);
+ 
   return (
     <div className="w-11/12 mx-auto space-y-5">
       <h1 className="text-center font-semibold text-4xl my-10">All Seller</h1>

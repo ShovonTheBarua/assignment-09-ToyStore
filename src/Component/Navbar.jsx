@@ -5,15 +5,15 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, signOutUser, setUser } = use(AuthContext);
-  console.log(user);
+ 
   const handleLogOut = () => {
     signOutUser()
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         toast.success("Logged out successfully");
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
   return (

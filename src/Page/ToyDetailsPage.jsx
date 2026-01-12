@@ -17,7 +17,7 @@ const ToyDetailsPage = () => {
   }, [allData, id]);
 
 
-  console.log(data);
+ 
   const { toyName, pictureURL, price, rating, availableQuantity, description } =
     data;
 

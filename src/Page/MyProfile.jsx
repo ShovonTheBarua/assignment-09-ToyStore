@@ -1,10 +1,16 @@
 import React, { use } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Provider/AuthProvider";
+import Loading from "../Component/Loading";
 
 const MyProfile = () => {
-  const { user } = use(AuthContext);
+  const { user, loading } = use(AuthContext);
+
+  if (loading) {
+    return <Loading />;
+  }
   const { displayName, email, photoURL } = user;
+  
   return (
     <div>
       <Helmet>

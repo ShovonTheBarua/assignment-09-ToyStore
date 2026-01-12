@@ -2,7 +2,7 @@ import Loading from "./Loading";
 import ToyCard from "./ToyCard";
 
 const PopularToys = ({ ToyData }) => {
-  console.log(ToyData);
+ 
  
 
   return (

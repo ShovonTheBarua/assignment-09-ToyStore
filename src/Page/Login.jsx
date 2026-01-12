@@ -12,13 +12,13 @@ const Login = () => {
 
     signInUser(email, password)
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
         setUser(res.user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        // console.log(errorCode, errorMessage);
       });
   };
 
