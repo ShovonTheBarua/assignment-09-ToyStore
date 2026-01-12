@@ -24,7 +24,7 @@ const ToyDetailsPage = () => {
   return (
     <div className="w-11/12 mx-auto mt-5 w-fit mx-auto">
         <Helmet>
-        <title>{toyName}</title>
+        <title>Toy details</title>
         <meta name="description" content="Best toys for kids" />
       </Helmet>
       <div className="flex flex-col md:flex-row gap-15 p-5 justify-center ">

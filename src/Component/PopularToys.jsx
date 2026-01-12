@@ -1,8 +1,10 @@
-import React from "react";
+import Loading from "./Loading";
 import ToyCard from "./ToyCard";
 
 const PopularToys = ({ ToyData }) => {
   console.log(ToyData);
+ 
+
   return (
     <div>
       <h1 className="text-4xl font-bold text-center mt-10">Popular Toys</h1>

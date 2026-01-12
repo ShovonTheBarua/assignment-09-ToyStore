@@ -3,10 +3,10 @@ import Slider from "../Component/Slider";
 import { useLoaderData } from "react-router";
 import PopularToys from "../Component/PopularToys";
 import { Helmet } from "react-helmet-async";
+import Loading from "../Component/Loading";
 
 const Home = () => {
   const ToyData = useLoaderData();
-  // console.log(ToyData)
 
   return (
     <div className="space-y-5 w-11/12 mx-auto">
@@ -16,6 +16,7 @@ const Home = () => {
       </Helmet>
 
       <Slider></Slider>
+
       <PopularToys ToyData={ToyData}></PopularToys>
     </div>
   );

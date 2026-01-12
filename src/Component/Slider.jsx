@@ -11,6 +11,9 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 
 const Slider = () => {
+
+
+  
     return (
         <Swiper
       modules={[Navigation, Pagination, Autoplay]}
