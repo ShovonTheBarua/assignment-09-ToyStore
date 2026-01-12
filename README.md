@@ -5,7 +5,7 @@
 The purpose of this toy store is to provide joy, entertainment, and learning through a curated selection of playthings, acting as a fun retail space that fosters creativity, imagination, and skill development in children (and adults) while also serving as a community hub offering unique products and personalized advice, going beyond just selling items to create an experience. 
 
 ## Live URL
-
+https://sparkly-croissant-aaf0fc.netlify.app/
 
 ## Key Feature
 
